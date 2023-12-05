@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab-3</title>
+    <script src="script.js" defer></script>
+    <style>
+        .item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="options">
+    <div class="item">
+        <label for="scale-slider">Масштаб</label>
+        <div>
+            <input type="range" min="20" max="80" id="scale-slider">
+            <span id="range-value">50</span>
+        </div>
+    </div>
+    <div class="item">
+        <label for="sleep-slider">Задержка</label>
+        <div>
+            <input type="range" min="0" max="800" id="sleep-slider">
+            <span id="sleep-value">400мс</span>
+        </div>
+    </div>
+    <div class="item">
+        Алгоритм
+
+        <div>
+            <input type="radio" id="step" name="algo" value="step" checked onclick="updateAlgo(this)"/>
+            <label for="step">Пошаговый</label>
+        </div>
+
+        <div>
+            <input type="radio" id="bresenham" name="algo" value="bresenham" onclick="updateAlgo(this)"/>
+            <label for="bresenham">Брезенхема</label>
+        </div>
+    </div>
+
+    <div class="item">
+        <label for="step-slider">Шаг пошагового алгоритма</label>
+        <div>
+            <input type="range" min="1" max="100" id="step-slider">
+            <span id="step-value">0.50</span>
+        </div>
+    </div>
+</div>
+<canvas id="canvas" width="1500" height="600"></canvas>
+</body>
+</html>
